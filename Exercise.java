@@ -2,17 +2,17 @@ import java.awt.*;
 import javax.swing.*;
 import java.applet.*;
 public class Exercise extends JFrame{
-	private ImageIcon image1;
-	private JLabel label1;
+	private ImageIcon exerciseRecommendationImage;
+	private JLabel exerciseLabel;
 	
 	//create a constructor to get the image
 	Exercise(){
 		setLayout(new FlowLayout());
 		
-		image1 = new ImageIcon(getClass().getResource("nah.jpeg"));
+		exerciseRecommendationImage = new ImageIcon(getClass().getResource("nah.jpeg"));
 		
-		label1 = new JLabel(image1);
-		add(label1);
+		exerciseLabel = new JLabel(exerciseRecommendationImage);
+		add(exerciseLabel);
 	}
 	public static void main(String[] args){
 		Exercise gui = new Exercise();
