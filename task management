@@ -1,0 +1,40 @@
+import java.awt.*;  
+import java.applet.*;
+import java.awt.event.*;
+public class TaskManagement extends Applet implements ActionListener {
+//asks for the title of the task
+	String taskTitle = "";
+	TextField task = new TextField(10);
+	String einfo = "";
+	TextField info = new TextField(10);
+	//holds the buttons to mark priority of the task
+	CheckboxGroup priority = new CheckboxGroup();
+	Checkbox low = new Checkbox("low", priority, true);
+	Checkbox med = new Checkbox("medium", priority, true);
+	Checkbox high = new Checkbox("high", priority, true);
+	//labels for the sections of the task management form
+	Label tTitle = new Label("Task Title :- ");
+	Label tPriority = new Label("Select a priority ranking :- ");
+	Label extraInformation = new Label("Please input any extra information :- ");
+	Button b = new Button("Enter Task");
+	
+	public void init(){
+		super.init();
+		add(tTitle);
+		add(task);
+		add(tPriority);
+		add(low);
+		add(med);
+		add(high);
+		add(extraInformation);
+		add(info);
+		
+	}
+	
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}
