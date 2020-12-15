@@ -1,15 +1,20 @@
 import java.awt.*;
 import java.util.Random;
 import javax.swing.*;
-//import java.applet.*;
+//have class Exercise extend JFrame to create the frame
 public class Exercise extends JFrame{
+	//add the image icon and label for the frame
 	private ImageIcon exerciseRecommendationImage;
 	private JLabel exerciseLabel;
 	
-	//create a constructor to get the image
+	//create a constructor to get the image from a random set of exercise images
 	Exercise(){
 		setLayout(new FlowLayout());
-		String exercises[] = {"clyde.jpeg", "testImage.JPG", "merv.JPG", "corpse.JPG", "stonestatue.JPG"};
+		//list of exercise images, will streamline later
+		String exercises[] = {"BridgePose.JPG", "PlankLegSwings.JPG", "RunnersLunge.JPG", 
+				"CrestenLunge.JPG", "SideLegLifts.JPG", "CrunchKicks.JPG","SitUps.JPG", 
+				"ForwardBend.JPG", "TrianglePose.JPG","LegExtensions.JPG", "LegRaises.JPG",
+				"PlankBackKicks.JPG"};
 		Random ex = new Random();
 		String randExercise = exercises[ex.nextInt(exercises.length)];
 		exerciseRecommendationImage = new ImageIcon(getClass().getResource(randExercise));
