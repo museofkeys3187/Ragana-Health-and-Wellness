@@ -1,40 +1,39 @@
-import java.awt.*;  
-import java.applet.*;
+import java.util.*; 
+import javax.swing.*;
+import java.io.*;
+import java.awt.*;
 import java.awt.event.*;
-public class TaskManagement extends Applet implements ActionListener {
-//asks for the title of the task
-	String taskTitle = "";
-	TextField task = new TextField(10);
-	String einfo = "";
-	TextField info = new TextField(10);
-	//holds the buttons to mark priority of the task
-	CheckboxGroup priority = new CheckboxGroup();
-	Checkbox low = new Checkbox("low", priority, true);
-	Checkbox med = new Checkbox("medium", priority, true);
-	Checkbox high = new Checkbox("high", priority, true);
-	//labels for the sections of the task management form
-	Label tTitle = new Label("Task Title :- ");
-	Label tPriority = new Label("Select a priority ranking :- ");
-	Label extraInformation = new Label("Please input any extra information :- ");
-	Button b = new Button("Enter Task");
-	
-	public void init(){
-		super.init();
-		add(tTitle);
-		add(task);
-		add(tPriority);
-		add(low);
-		add(med);
-		add(high);
-		add(extraInformation);
-		add(info);
+public class TaskManagement extends JFrame{
+	public static void main(String[] args) {
+		//creates the JFrame and JPanel 
+		JFrame taskFrame = new JFrame();
+		JPanel taskPanel = new JPanel();
+		taskFrame.add(taskPanel);
+		//make sure the panel will close when told to
+		taskFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		taskFrame.setSize(400, 400);
+		taskFrame.setLayout(new FlowLayout());
+		taskFrame.setVisible(true);
+		//title of the form
+		taskFrame.setTitle("Task Input Form");
+		//put a label and text box for the user to name the task
+		JLabel taskTitle = new JLabel("Task Title");
+		taskPanel.add(taskTitle);
+		JTextField task = new JTextField("Enter Task Title Here");
+		taskPanel.add(task);
+		//set up a check box system to indicate the priority of the task
+		JCheckBox priority1 = new JCheckBox("low");
+		JCheckBox priority2 = new JCheckBox("medium");
+		JCheckBox priority3 = new JCheckBox("high");
+		JLabel priorityLevel = new JLabel("Please enter in the priority level of the task");
+		taskPanel.add(priorityLevel);
+		taskPanel.add(priority1);
+		taskPanel.add(priority2);
+		taskPanel.add(priority3);
+		JLabel extraInformation = new JLabel("Please enter in any extra information.");
+		taskPanel.add(extraInformation);
+		JTextField info = new JTextField("                 ");
+		taskPanel.add(info);
 		
 	}
-	
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
 }
